@@ -1,0 +1,29 @@
+{% extends 'tracker/base.html' %}
+
+{% block title %}History - Caltrack{% endblock %}
+
+{% block content %}
+<div class="header">
+    <h1>Nutrition History</h1>
+</div>
+
+<div class="content">
+    {% if entries %}
+        {% for entry in entries %}
+        <div class="history-item">
+            <h4>{{ forloop.counter }}. {{ entry.name }}</h4>
+            <p><strong>Calories:</strong> {{ entry.calories }}</p>
+            <p><strong>Protein:</strong> {{ entry.protein }}g</p>
+            <p><strong>Carbs:</strong> {{ entry.carbs }}g</p>
+            <p><strong>Fats:</strong> {{ entry.fats }}g</p>
+            <p><strong>Added:</strong> {{ entry.date_added|date:"M d, Y H:i" }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="text-center">
+            <h3>No entries yet</h3>
+            <p>Start tracking your nutrition by <a href="{% url 'track' %}">adding your first food entry</a>!</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

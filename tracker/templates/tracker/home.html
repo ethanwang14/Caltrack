@@ -1,0 +1,49 @@
+{% extends 'tracker/base.html' %}
+
+{% block title %}Home - Caltrack{% endblock %}
+
+{% block content %}
+<div class="header">
+    <h1>Track Your Nutrition with Caltrack</h1>
+</div>
+
+<div class="content">
+    <h2>Weekly Totals</h2>
+    
+    <div class="mb-20">
+        <div class="progress-label">Calories</div>
+        <div class="progress-bar">
+            <div class="progress-fill" data-width="{{ progress.calories }}"></div>
+            <div class="progress-value">{{ totals.calories }}/{{ goals.calories_goal }}</div>
+        </div>
+    </div>
+    
+    <div class="mb-20">
+        <div class="progress-label">Protein</div>
+        <div class="progress-bar">
+            <div class="progress-fill" data-width="{{ progress.protein }}"></div>
+            <div class="progress-value">{{ totals.protein }}/{{ goals.protein_goal }}g</div>
+        </div>
+    </div>
+    
+    <div class="mb-20">
+        <div class="progress-label">Carbs</div>
+        <div class="progress-bar">
+            <div class="progress-fill" data-width="{{ progress.carbs }}"></div>
+            <div class="progress-value">{{ totals.carbs }}/{{ goals.carbs_goal }}g</div>
+        </div>
+    </div>
+    
+    <div class="mb-20">
+        <div class="progress-label">Fats</div>
+        <div class="progress-bar">
+            <div class="progress-fill" data-width="{{ progress.fats }}"></div>
+            <div class="progress-value">{{ totals.fats }}/{{ goals.fats_goal }}g</div>
+        </div>
+    </div>
+    
+    <div class="text-center mt-20">
+        <p>Ready to track your nutrition? <a href="{% url 'track' %}">Add a food entry</a> or <a href="{% url 'goals' %}">update your goals</a>.</p>
+    </div>
+</div>
+{% endblock %}

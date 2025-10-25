@@ -1,0 +1,27 @@
+{% extends 'tracker/base.html' %}
+
+{% block title %}Reset Week - Caltrack{% endblock %}
+
+{% block content %}
+<div class="header">
+    <h1>Reset Week</h1>
+</div>
+
+<div class="content">
+    <h2>Are you sure you want to reset your week?</h2>
+    <p>This action will:</p>
+    <ul>
+        <li>Delete all your food entries</li>
+        <li>Clear your weekly totals</li>
+        <li>Keep your goals unchanged</li>
+    </ul>
+    
+    <p><strong>This action cannot be undone!</strong></p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, Reset Week</button>
+        <a href="{% url 'goals' %}" class="btn">Cancel</a>
+    </form>
+</div>
+{% endblock %}
