@@ -1,0 +1,2 @@
+# Force GitHub to classify this project as Python
+*.html linguist-language=Python
