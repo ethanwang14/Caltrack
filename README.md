@@ -49,7 +49,7 @@ This application uses as the database SQLite to store user data
 7. **Reset Week**: Use the Reset Week button to start fresh
 
 
-## Technology Stack
+## Technology Used
 
 - Django 5.2.7
 - SQLite Database
