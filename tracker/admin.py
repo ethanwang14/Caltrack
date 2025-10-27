@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import UserProfile, Goals, FoodEntry
-
-# Register your models here.
+# Models
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = ['user', 'user__email']
