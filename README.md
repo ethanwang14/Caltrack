@@ -54,4 +54,4 @@ This application uses as the database SQLite to store user data
 - Django 5.2.7
 - SQLite Database
 - HTML/CSS/JavaScript
-- Bootstrap-inspired styling
+- Bootstrap
